@@ -1,6 +1,10 @@
 /********** Exercice 1 **********/
 // Remplacer le type User par une interface en déduisant les propriétes et leur type
-type User = any;
+interface User {
+    name: string;
+    age: number;
+    sex: string;
+}
 
 const users: User[] = [
     {
@@ -15,42 +19,71 @@ const users: User[] = [
     }
 ];
 
+
 // Compléter la fonction sumAge pour calculer la somme des ages d'une liste de Users
-function sumAge(users) {
-    // TODO
+
+function sumAge(users: User[]): number {
+    return users.reduce((acc, user) => acc + user.age, 0);
 }
 
-// console.log(sumAge(users));
+console.log(sumAge(users));
 
 
 /********** Exercice 2 **********/
 // Créer des tableaux de valeurs pour les deux interfaces suivantes
-interface Car {
-    name: string,
-    color: string,
-    price?: number
+
+interface Colorized {
+    color: string;
 }
 
-const cars = [];
-
-interface Bike {
-    color: string,
-    brakes: boolean
+interface Car extends Colorized {
+    name: string;
+    price?: number;
 }
 
-const bikes = [];
+interface Bike extends Colorized {
+    brakes: boolean;
+}
+
+const cars: Car[] = [
+    {
+        name: 'Audi TT',
+        color: 'white',
+        price: 15000
+    },
+    {
+        name: 'Picasso',
+        color: 'black'
+    },
+    {
+        name: 'BX',
+        color: 'white',
+        price: 100
+    }
+]
+
+const bikes: Bike[] = [
+    {
+        brakes: false,
+        color: 'red',
+    },
+    {
+        brakes: true,
+        color: 'blue'
+    }
+]
 
 // Compléter la fonction suivante qui permet de récupérer le second élément d'un tableau. Rendre cette fonction générique
-function getSecondElementGeneric(array) {
-    // TODO
+function getSecondElementGeneric<T>(array: T[]): T {
+    return array[1];
 }
 
-// console.log(getSecondElementGeneric(cars));
+console.log(getSecondElementGeneric(cars));
 
 // Créer une fonction qui compte le nombre d'éléments d'un tableau par couleur.
 // Trouver un moyen pour que cette fonction accepte des objets de type Car ou Bike
-function countByColor(array, color) {
-    // TODO
+function countByColor(array: Colorized[], color: string): number {
+    return array.filter(c => c.color == color).length;
 }
 
 // console.log(countByColor(bikes, 'white'));
@@ -58,22 +91,27 @@ function countByColor(array, color) {
 /********** Exercice 3 **********/
 // Fixer les éventuelles erreurs dans la classe suivante
 class Animal {
-    constructor(name) {}
-    move(meters) {
+
+    constructor(private name: string) {
+    }
+
+    move(meters: number) {
       console.log(`${this.name} moved ${meters}m.`);
     }
 }
 
 // Compléter les classes suivantes pour que la méthode move affiche le nom du Snake ou Horse et sa distance de déplacement
-class Snake {
-    move(meters) {
-        console.log("Slithering...")
+class Snake extends Animal {
+    override move(meters: number) {
+        console.log("Slithering...");
+        super.move(meters);
     }
 }
 
-class Horse {
-    move(meters) {
-        console.log("Galloping...")
+class Horse extends Animal {
+    override move(meters: number = 2) {
+        console.log("Galloping...");
+        super.move(meters);
     }
 }
 
@@ -81,4 +119,4 @@ class Horse {
 // console.log(new Horse("Toto").name) // devrait retourner une erreur
 
 // Ajouter une distance par défaut sur le déplacement d'un Horse
-// new Horse("Titi").move() // devrait afficher un déplacement avec la valeur par défaut
+new Horse("Titi").move(4) // devrait afficher un déplacement avec la valeur par défaut
