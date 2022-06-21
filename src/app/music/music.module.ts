@@ -7,6 +7,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { HomeComponent } from './component/home/home.component';
 import { AlbumListComponent } from './component/album-list/album-list.component';
 import { HighlightDirective } from './directive/highlight.directive';
+import { IndividuPipe } from './pipe/individu.pipe';
 
 
 
@@ -17,7 +18,8 @@ import { HighlightDirective } from './directive/highlight.directive';
     HeaderComponent,
     HomeComponent,
     AlbumListComponent,
-    HighlightDirective
+    HighlightDirective,
+    IndividuPipe
   ],
   imports: [
     CommonModule,

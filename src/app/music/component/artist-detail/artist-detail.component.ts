@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ArtistType } from '../../model/artist-type.enum';
 import { Artist } from '../../model/artist.model';
 
@@ -18,5 +18,12 @@ export class ArtistDetailComponent {
     type: ArtistType.SOLO,
     birthdate: '08/01/1947',
     nbAlbums: 28
+  }
+
+  changeName() {
+    this.artist = {
+      ...this.artist,
+      firstname: "Jack"
+    }
   }
 }

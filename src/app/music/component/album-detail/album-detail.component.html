@@ -1,6 +1,6 @@
 <div>
     <h2>{{ album.name }}</h2>
-    <div>Sorti le {{ album.date }} avec une note de {{ album.note }}</div>
+    <div>Sorti le {{ album.date | date : 'dd/MM/yyyy' }} avec une note de {{ album.note }}</div>
     <div>Description : {{ album.description }}</div>
     <div>
         <app-artist-detail [artist]="album.artist" [displayNbAlbums]="false"></app-artist-detail>
