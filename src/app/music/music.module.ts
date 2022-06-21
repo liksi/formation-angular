@@ -8,6 +8,8 @@ import { HomeComponent } from './component/home/home.component';
 import { AlbumListComponent } from './component/album-list/album-list.component';
 import { HighlightDirective } from './directive/highlight.directive';
 import { IndividuPipe } from './pipe/individu.pipe';
+import { ArtistCreateComponent } from './component/artist-create/artist-create.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,11 +21,13 @@ import { IndividuPipe } from './pipe/individu.pipe';
     HomeComponent,
     AlbumListComponent,
     HighlightDirective,
-    IndividuPipe
+    IndividuPipe,
+    ArtistCreateComponent
   ],
   imports: [
     CommonModule,
-    MusicRoutingModule
+    MusicRoutingModule,
+    FormsModule
   ]
 })
 export class MusicModule {
