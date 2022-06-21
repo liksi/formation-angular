@@ -6,4 +6,5 @@ export interface Artist {
   surname: string;
   birthdate: string;
   type: ArtistType;
+  nbAlbums: number;
 }

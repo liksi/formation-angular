@@ -9,11 +9,14 @@ import { Artist } from '../../model/artist.model';
 })
 export class ArtistDetailComponent {
 
+  @Input() displayNbAlbums: boolean = true;
+
   @Input() artist: Artist = {
     id: 0,
     firstname: "David",
     surname: "Bowie",
     type: ArtistType.SOLO,
-    birthdate: '08/01/1947'
+    birthdate: '08/01/1947',
+    nbAlbums: 28
   }
 }

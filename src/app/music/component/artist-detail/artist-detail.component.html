@@ -2,4 +2,5 @@
   <h2>ARTISTE</h2>
   <div>Name : {{ artist.firstname + " " + artist.surname }}</div>
   <div>Date : {{ artist.birthdate }}</div>
+  <div *ngIf="displayNbAlbums">Nombre d'album(s) : {{ artist.nbAlbums }}</div>
 </div>

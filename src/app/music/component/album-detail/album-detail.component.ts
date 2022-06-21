@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Album } from '../../model/album.model';
 import { ArtistType } from '../../model/artist-type.enum';
 
@@ -19,7 +19,8 @@ export class AlbumDetailComponent {
        firstname: "The Beach Boys",
        surname: "",
        birthdate: "1961",
-       type: ArtistType.BAND
+       type: ArtistType.BAND,
+       nbAlbums: 31
     }
  }
 }

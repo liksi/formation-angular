@@ -3,6 +3,6 @@
     <div>Sorti le {{ album.date }} avec une note de {{ album.note }}</div>
     <div>Description : {{ album.description }}</div>
     <div>
-        <app-artist-detail [artist]="album.artist"></app-artist-detail>
+        <app-artist-detail [artist]="album.artist" [displayNbAlbums]="false"></app-artist-detail>
     </div>
 </div>

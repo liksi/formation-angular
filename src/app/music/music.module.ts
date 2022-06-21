@@ -5,6 +5,8 @@ import { ArtistDetailComponent } from './component/artist-detail/artist-detail.c
 import { MusicRoutingModule } from './music-routing.module';
 import { HeaderComponent } from './component/header/header.component';
 import { HomeComponent } from './component/home/home.component';
+import { AlbumListComponent } from './component/album-list/album-list.component';
+import { HighlightDirective } from './directive/highlight.directive';
 
 
 
@@ -13,7 +15,9 @@ import { HomeComponent } from './component/home/home.component';
     AlbumDetailComponent,
     ArtistDetailComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    AlbumListComponent,
+    HighlightDirective
   ],
   imports: [
     CommonModule,
