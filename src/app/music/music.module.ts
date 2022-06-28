@@ -9,7 +9,8 @@ import { AlbumListComponent } from './component/album-list/album-list.component'
 import { HighlightDirective } from './directive/highlight.directive';
 import { IndividuPipe } from './pipe/individu.pipe';
 import { ArtistCreateComponent } from './component/artist-create/artist-create.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlbumCreateComponent } from './component/album-create/album-create.component';
 
 
 
@@ -22,12 +23,14 @@ import { FormsModule } from '@angular/forms';
     AlbumListComponent,
     HighlightDirective,
     IndividuPipe,
-    ArtistCreateComponent
+    ArtistCreateComponent,
+    AlbumCreateComponent
   ],
   imports: [
     CommonModule,
     MusicRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MusicModule {

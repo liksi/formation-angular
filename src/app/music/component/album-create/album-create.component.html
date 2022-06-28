@@ -1,0 +1,58 @@
+<div>
+  <h1>Création d'un album</h1>
+  <div style="display: flex">
+      <div class="labels">
+          <div>Id : </div>
+          <div>Nom : </div>
+          <div>Description : </div>
+          <div>Note : </div>
+          <div>Date : </div>
+          <div>Id de l'artiste : </div>
+          <div>Nom de l'artiste : </div>
+          <div>Prénom de l'artiste : </div>
+          <div>Date de l'artiste : </div>
+          <div>Type de l'artiste : </div>
+          <div>Nombre d'albums de l'artiste : </div>
+      </div>
+      <form [formGroup]="albumForm">
+          <div>
+              <input type="number" formControlName="id">
+          </div>
+          <div>
+              <input type="text" formControlName="name">
+          </div>
+          <div>
+              <input type="text" formControlName="description">
+          </div>
+          <div>
+            <input type="number" formControlName="note">
+          </div>
+          <div>
+            <input type="date" formControlName="date">
+          </div>
+          <div formGroupName="artist">
+            <div>
+              <input type="number" formControlName="id">
+            </div>
+            <div>
+              <input type="text" formControlName="firstname">
+            </div>
+            <div>
+              <input type="text" formControlName="surname">
+            </div>
+            <div>
+              <input type="text" formControlName="birthdate">
+            </div>
+            <div>
+              <select formControlName="type">
+                <option *ngFor="let type of artistTypes">{{ type }}</option>
+              </select>
+            </div>
+            <div>
+              <input type="number" formControlName="nbAlbums">
+            </div>
+          </div>
+      </form>
+  </div>
+  <button [hidden]="!albumForm.valid || albumForm.pristine" (click)="addAlbum()">Ajouter</button>
+</div>
