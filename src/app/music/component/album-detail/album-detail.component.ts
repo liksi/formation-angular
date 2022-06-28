@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Album } from '../../model/album.model';
 import { ArtistType } from '../../model/artist-type.enum';
+import { AlbumService } from '../../service/album.service';
 
 @Component({
   selector: 'app-album-detail',
@@ -22,5 +23,8 @@ export class AlbumDetailComponent {
        type: ArtistType.BAND,
        nbAlbums: 31
     }
- }
+  }
+
+  constructor(private albumService: AlbumService) {
+  }
 }

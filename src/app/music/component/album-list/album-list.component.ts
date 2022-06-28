@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Album } from '../../model/album.model';
 import { ArtistType } from '../../model/artist-type.enum';
+import { AlbumService } from '../../service/album.service';
 @Component({
   selector: 'app-album-list',
   templateUrl: './album-list.component.html',
@@ -40,8 +41,7 @@ export class AlbumListComponent {
     }
  ];
 
-  constructor(
-    private router: Router) {
+  constructor(private router: Router, private albumService: AlbumService) {
   }
 
   navigateToDetail(id: number) {
